@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Shared project · RecipeStudio</title>
+<link rel="icon" href="icon.png">
+<script src="site-config.js"></script>
+<script src="viewer.js"></script>
+<style>.v-msg{max-width:560px;margin:15vh auto;padding:0 16px;text-align:center;font:16px/1.6 system-ui,sans-serif}</style>
+</head>
+<body>
+<div id="app"><p class="v-msg">Loading the shared project…</p></div>
+<script>
+// A read-only view of a team project, opened from a share link (view.html#<token>). No account needed.
+(async () => {
+  const app = document.getElementById('app'), S = window.SITE || {}, token = location.hash.slice(1);
+  const say = html => { app.innerHTML = `<p class="v-msg">${html}</p>`; };
+  if (!token || token.length < 20) return say('This link is incomplete. Ask whoever shared it to copy it again.');
+  try {
+    const r = await fetch(`${S.supabaseUrl}/rest/v1/rpc/get_shared_project`, {
+      method: 'POST',
+      headers: { apikey: S.supabaseAnonKey, Authorization: 'Bearer ' + S.supabaseAnonKey, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ share_token: token })
+    });
+    const data = r.ok ? await r.json() : null;
+    if (!data) return say('This link doesn\'t work any more. It may have been turned off, or the team\'s plan has ended.');
+    const of = k => data.items.filter(i => i.kind === k).map(i => i.data);
+    const P = { name: data.name, crafting: { nodes: of('node'), edges: of('edge') }, mobs: of('mob'), dims: of('dim'), items: of('item'), quests: of('quest'), shop: of('shop'), ranks: of('rank') };
+    document.title = `${data.name} · RecipeStudio`;
+    const v = RSViewerFactory(), st = document.createElement('style'); st.textContent = v.css; document.head.appendChild(st);
+    v.render(app, P);
+  } catch (e) { say('The project couldn\'t be loaded. Check your internet connection and reload the page.'); }
+})();
+</script>
+</body>
+</html>

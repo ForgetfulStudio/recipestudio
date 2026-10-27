@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beta test · RecipeStudio</title>
+<meta name="description" content="Help test RecipeStudio before it launches: download the test version and get Premium and Teams free during the test.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="site-config.js"></script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="./"><img src="icon.png" alt="">RECIPESTUDIO</a><nav class="links" aria-label="Main"><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a><a href="index.html#faq">FAQ</a><a class="btn primary" href="index.html#download">Download</a></nav></div></header>
+
+<main>
+  <section class="hero"><div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Beta test</p>
+      <h1>Help us test <span>RecipeStudio</span></h1>
+      <p class="lead">Get the test version before everyone else. With a beta code, Premium and Teams are free for the whole test. In return, tell us what works and what doesn't.</p>
+      <div class="btn-row"><a class="btn primary dl-beta" href="#">Download the beta for Windows</a></div>
+      <p class="small">Version <span data-version></span> · Windows 10 and 11 · The test runs until <span data-beta-ends></span> at the latest</p>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <p class="eyebrow">Tutorial</p>
+    <h2>How to activate the beta</h2>
+    <p class="section-lead">It takes about two minutes. You need the beta code we sent you. It looks like <code>BETA-XXXXXX</code>.</p>
+    <ol class="tut">
+      <li class="tut-step"><div class="tut-text"><h3>Install the beta</h3><p>Download it with the button above and open <code>RecipeStudio-Beta-Setup.exe</code>. If Windows says it "protected your PC", click <b>More info</b>, then <b>Run anyway</b>. Follow the setup wizard, and RecipeStudio Beta opens at the end.</p><p class="small">Windows shows that message for new apps from small developers without a paid code-signing certificate. It doesn't mean something is wrong. <a href="index.html#windows-warning">More about it</a>.</p></div></li>
+      <li class="tut-step"><div class="tut-text"><h3>Click Team</h3><p>It's in the row of buttons at the top of the app.</p></div><div class="tut-pic"><img src="img/beta/step-team-button.png" alt="The top of the app, with the Team button marked" loading="lazy"></div></li>
+      <li class="tut-step"><div class="tut-text"><h3>Create your account</h3><p>Type your email, a password (8 characters or more) and a display name, then click <b>Create account</b>. Already have one? Click <b>I already have an account</b> and sign in.</p><p class="small">The beta is linked to your account, so you can use it on another computer too.</p></div><div class="tut-pic"><img src="img/beta/step-create-account.png" alt="The Team window with email, password and display name filled in, and the Create account button marked" loading="lazy"></div></li>
+      <li class="tut-step"><div class="tut-text"><h3>Open your plan</h3><p>Click the plan button next to <b>File</b>. It says <b>NORMAL</b> for now.</p></div><div class="tut-pic"><img src="img/beta/step-plan-button.png" alt="The top of the app, with the NORMAL plan button marked" loading="lazy"></div></li>
+      <li class="tut-step"><div class="tut-text"><h3>Enter your beta code</h3><p>Under <b>Free test period</b>, type your code and click <b>Join the test</b>.</p></div><div class="tut-pic"><img src="img/beta/step-enter-code.png" alt="The Free test period box with a beta code typed in and the Join the test button marked" loading="lazy"></div></li>
+      <li class="tut-step"><div class="tut-text"><h3>You're in</h3><p>It now says <b>You're a beta tester</b>. Premium and Teams are unlocked until the test ends. Use the <b>Feedback</b> button at the top of the app to tell us what works and what doesn't.</p></div><div class="tut-pic"><img src="img/beta/step-joined.png" alt="The message You're a beta tester, with the date the free test ends" loading="lazy"></div></li>
+    </ol>
+    <p class="small" style="margin-top:18px">Code not working? Check it's typed exactly as we sent it, and that you're connected to the internet. Still stuck? Email <span data-contact>forgetfulstudios@gmail.com</span>.</p>
+  </div></section>
+
+  <section class="alt"><div class="wrap faq">
+    <p class="eyebrow">Good to know</p>
+    <h2>Questions</h2>
+    <details><summary>How do I get a beta code?</summary><p>Ask us at <span data-contact>forgetfulstudios@gmail.com</span>. Codes are limited, so tell us a little about your mod or server.</p></details>
+    <details><summary>Can I use it without a code?</summary><p>Yes. Without a code it works like the free Normal plan.</p></details>
+    <details><summary>What happens when the test ends?</summary><p>The beta stops working on the last day of the test and offers to save your project. Then install the regular version from the <a href="index.html#download">download page</a> and open your project there. Your projects are files on your computer, so nothing is lost.</p></details>
+    <details><summary>Can I have the beta and the regular version together?</summary><p>Yes. They're separate apps with their own settings. They share your project files in Documents\RecipeStudio.</p></details>
+    <details><summary>What does the beta send to you?</summary><p>Your feedback, error reports when something breaks, and counts of which features are used. Never your project content. See the <a href="privacy.html">privacy policy</a>.</p></details>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© <span id="year"></span> RecipeStudio</span>
+  <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund.html">Refunds</a><a href="example.html">Example plan</a>
+  <span data-contact></span>
+  <span class="fine">Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span>
+</div></footer>
+<script src="common.js"></script>
+</body>
+</html>

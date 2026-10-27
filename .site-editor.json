@@ -1,0 +1,22 @@
+{
+  "name": "RecipeStudio website",
+  "protect": [
+    { "path": "example.html", "note": "This page is exported from the RecipeStudio app (the example project as a web page). To change it, export it again from the app." },
+    { "path": "view.html", "note": "This page shows team projects opened from share links. Its content comes from the app, so it isn't edited here." }
+  ],
+  "locked": [
+    { "selector": "#plans", "note": "Prices and plan bullets come from app/config.json. Change them in the RecipeStudio Editor (prices and plan text), then the site picks them up." },
+    { "selector": "#teamPrice", "note": "The team price sentence is written from the prices in app/config.json (RecipeStudio Editor)." },
+    { "selector": "[data-version]", "note": "The app version is filled in automatically from app/package.json." },
+    { "selector": "[data-contact]", "note": "The contact email is set in the RecipeStudio Editor (Website and updates → contact email)." },
+    { "selector": "[data-beta-ends]", "note": "The test's last day comes from the RecipeStudio Editor (Beta app last day)." }
+  ],
+  "url": "https://forgetfulstudio.github.io/recipestudio",
+  "publish": {
+    "type": "command",
+    "label": "RecipeStudio's publish tool (website only)",
+    "command": "node tools/publish.js --site",
+    "cwd": "../app",
+    "url": "https://forgetfulstudio.github.io/recipestudio/"
+  }
+}
